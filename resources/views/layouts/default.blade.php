@@ -33,19 +33,25 @@
       <li><a href="/gaming">Gaming</a></li>
       <li><a href="/movie">Movie&fun</a></li>
       <li><a href="/nsfw"> Nsfw</a></li>
-        <li><a href="/gif"> Gif</a></li>
-        <li><a href="/upload"> Upload</a></li>
-
-
+      <li><a href="/gif"> Gif</a></li>
+      <li><a href="/upload"> Upload</a></li>
 
     </ul>
-      <ul >
+    <ul >
+      @if(!Auth::check())
+        <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
+
+         <a href="/login">Login</a>
+         </li>
+        <li class="socialdiv" style="margin-top:15px;">
+         <a href="/signUp">Sinup</a>
+        </li>
+    @else
     <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
-     <a href="/login">Login</a>
+         <a href="#">{{Auth::user()->name}}</a>
+     <a href="/logout">Log Out</a>
      </li>
-    <li class="socialdiv" style="margin-top:15px;">
-     <a href="/signUp">Sinup</a>
-    </li>
+    @endif
    </ul>
 
   </div>

@@ -9,15 +9,11 @@
          <h3 class="panel-title">  Select image to upload:<small></small></h3>
        </div>
        <div class="panel-body">
-         <form action="#" method="post">
 
-             <input type="text" name="title" id="title">
-             <input type="submit" value="title" name="submit">
-         </form>
 
-<form action="/image" method="post" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
-
+    <input type="text" name="title" id="title" placeholder="Title">
     <input type="file" name="image" id="image">
     <input type="submit" value="Upload Image" name="submit">
 </form>

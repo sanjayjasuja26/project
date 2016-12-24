@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Register;
+use App\User;
 use Hash;
+use Auth;
 
 class SignupController extends Controller
 {
@@ -16,17 +17,19 @@ class SignupController extends Controller
     {
       $this->validate($request, [
       'name' => 'required|max:255',
-      'email' => 'email|required|unique:registers',
+      'email' => 'email|required|unique:users',
       'password' => 'required|min:3|confirmed',
         'password_confirmation' => 'required|min:3'
   ]);
 
-  $user =new Register;
+  $user =new User;
   $user->name=$request->name;
   $user->email=$request->email;
   $user->password=Hash::make($request->password);
   $user->save();
-  return back();
+  Auth::loginUsingId($user->id);
+
+  return redirect('/');
 
 
     }

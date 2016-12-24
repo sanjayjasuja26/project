@@ -6,6 +6,7 @@ use App\Http\Controllers\Session;
 use Illuminate\Http\Request;
 use App\Register;
 use Hash;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -19,37 +20,26 @@ class LoginController extends Controller
         $this->validate($request, [
 
         'email' => 'email|required|exists:registers'
+          ]);
 
+if(Auth::attempt(['email' => $request->email, 'password' =>$request->password])){
 
-    ]);
+  return redirect('/');
 
-
-       $users = Register::where('email',$request->email)->get();
-
-       foreach($users as $user)
-       {
-         $oldpassword=$user->password;
-
-       }
-
-
-
-       if(Hash::check( $request->password,$oldpassword))
-       {
-         return redirect('/');
-
-       }
-
-
-      else
-      {
-      \Session::flash('message', "invalid password");
-        return back();
-
-
-      }
+}
+    else{
+      echo 'hello';
+    }
 
 
 
+
+
+    }
+
+    public function getLogout(){
+
+      Auth::logout();
+      return redirect('/');
     }
 }

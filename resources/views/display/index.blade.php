@@ -1,25 +1,20 @@
-
 @extends('layouts.default')
 @section('content')
+
 
 <div class="container-fluid">
       <div class="row">
         <div class="col-sm-1" ></div>
             <div class="col-sm-6" >
 
-              @foreach($images as $imag)
-
+    @foreach($displays as $getdisplay)
               <div class="workingdiv">
-                <h4>  {{$imag->title}}</h4>
+                <h4>  {{$getdisplay->title}} </h4>
 
                 <div class="img-rounded">
 
-
-
-              <a href="/disp/{{$imag->id}}" target="_blank">  <img src="/{{$imag->image}}" class="img-rounded" alt="Cinque Terre" ></a>
-
-
-                </div>
+                <img src="/{{$getdisplay->image}}" class="img-rounded" alt="Cinque Terre" >
+               </div>
                 <div><span>Points </span> <span class="badge">4</span>
                     <span> comments</span> <span class="badge">2</span>
                 </div>
@@ -39,17 +34,17 @@
                </div>
 
              </div>
+                 @endforeach
              <hr>
-             @endforeach
+
 
 
             </div>
             <div class="col-sm-4" >
-                <div class="img-rounded">
-                  <img src="/images/images.jpeg" class="img-rounded">
-                 </div>
+
 
             </div>
     </div>
 </div>
+
 @endsection
