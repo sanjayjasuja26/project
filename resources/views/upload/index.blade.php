@@ -13,7 +13,7 @@
 
 <form action="" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
-    <input type="text" name="title" id="title" placeholder="Title">
+    <input type="text" name="title" id="title" placeholder="Title" required>
     <input type="file" name="image" id="image">
     <input type="submit" value="Upload Image" name="submit">
 </form>

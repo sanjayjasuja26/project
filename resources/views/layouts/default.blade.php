@@ -34,7 +34,10 @@
       <li><a href="/movie">Movie&fun</a></li>
       <li><a href="/nsfw"> Nsfw</a></li>
       <li><a href="/gif"> Gif</a></li>
-      <li><a href="/upload"> Upload</a></li>
+        @if(Auth::check())
+        <li><a href="/upload"> Upload</a></li>
+          @endif
+
 
     </ul>
     <ul >
@@ -47,6 +50,7 @@
          <a href="/signUp">Sinup</a>
         </li>
     @else
+
     <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
          <a href="#">{{Auth::user()->name}}</a>
      <a href="/logout">Log Out</a>

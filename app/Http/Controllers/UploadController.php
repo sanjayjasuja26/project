@@ -14,17 +14,15 @@ class UploadController extends Controller
 
     public function image(Request $request)
     {
-  
+
        $upload= new upload;
          if($request->hasfile('image'))
         {
-         $file=$request->file('image');
+          $file=$request->file('image');
           $path='image';
           $filename=$file->getClientOriginalName();
           $upload->image = $path.'/'.$filename;
-
-          //echo $db_path;die;
-        $file->move($path,$filename);
+          $file->move($path,$filename);
 
         }
           $upload->title=$request->title;

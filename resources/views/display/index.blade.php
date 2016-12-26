@@ -8,8 +8,9 @@
             <div class="col-sm-6" >
 
     @foreach($displays as $getdisplay)
+      <h2>  {{$getdisplay->title}} </h2>
               <div class="workingdiv">
-                <h4>  {{$getdisplay->title}} </h4>
+
 
                 <div class="img-rounded">
 
@@ -33,12 +34,25 @@
                  </div>
                </div>
 
-             </div>
+
                  @endforeach
              <hr>
 
 
+             <form action="#" method="POST">
+               {{ csrf_field() }}
+            
 
+                 <textarea type="text" class="textdiv" name="title" id="title" placeholder="Title" required>
+                 </textarea>
+
+
+                 <input type="submit" value="comment" name="comment">
+             </form>
+             <hr>
+
+
+            </div>
             </div>
             <div class="col-sm-4" >
 
