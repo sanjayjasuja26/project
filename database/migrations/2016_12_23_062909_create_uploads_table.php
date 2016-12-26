@@ -16,7 +16,8 @@ class CreateUploadsTable extends Migration
       Schema::create('uploads',function (Blueprint $table)
       {
          $table->increments('id');
-          $table->string('title')->nullable();
+          $table->string('title');
+          $table->integer('user_id');
           $table->string('image');
           $table->timestamps();
 

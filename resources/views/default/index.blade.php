@@ -13,12 +13,13 @@
                 <h4>  {{$imag->title}}</h4>
 
                 <div class="img-rounded">
+                  <div class="textdiv">
 
 
 
               <a href="/disp/{{$imag->id}}" target="_blank">  <img src="/{{$imag->image}}" class="img-rounded" alt="Cinque Terre" ></a>
 
-
+            </div>
                 </div>
                 <div><span>Points </span> <span class="badge">4</span>
                     <span> comments</span> <span class="badge">2</span>
@@ -46,7 +47,7 @@
             </div>
             <div class="col-sm-4" >
                 <div class="img-rounded">
-                  <img src="/images/images.jpeg" class="img-rounded">
+          
                  </div>
 
             </div>

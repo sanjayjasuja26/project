@@ -25,15 +25,10 @@
 
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">9gag</a>
-    </div>
+
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Home</a></li>
-      <li><a href="/gaming">Gaming</a></li>
-      <li><a href="/movie">Movie&fun</a></li>
-      <li><a href="/nsfw"> Nsfw</a></li>
-      <li><a href="/gif"> Gif</a></li>
+
         @if(Auth::check())
         <li><a href="/upload"> Upload</a></li>
           @endif
@@ -46,9 +41,7 @@
 
          <a href="/login">Login</a>
          </li>
-        <li class="socialdiv" style="margin-top:15px;">
-         <a href="/signUp">Sinup</a>
-        </li>
+        
     @else
 
     <li class="socialdiv" style="margin-top:15px;margin-left:5px;">

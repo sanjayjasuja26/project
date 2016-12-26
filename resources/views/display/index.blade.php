@@ -13,9 +13,10 @@
 
 
                 <div class="img-rounded">
+                  <div class="textdiv">
 
                 <img src="/{{$getdisplay->image}}" class="img-rounded" alt="Cinque Terre" >
-               </div>
+              </div></div>
                 <div><span>Points </span> <span class="badge">4</span>
                     <span> comments</span> <span class="badge">2</span>
                 </div>
@@ -39,17 +40,38 @@
              <hr>
 
 
-             <form action="#" method="POST">
+             <form action="/disp" method="POST">
                {{ csrf_field() }}
-            
 
-                 <textarea type="text" class="textdiv" name="title" id="title" placeholder="Title" required>
+
+                 <textarea type="text" class="textdiv" name="comment" id="comment" placeholder="Title" required>
                  </textarea>
+                   @foreach($displays as $getdisplay)
+
+                 <input type="hidden" name="upload_id" id="upload_id" value="{{$getdisplay->id}}">
+               @endforeach
 
 
-                 <input type="submit" value="comment" name="comment">
+                 <input type="submit" value="submit">
              </form>
              <hr>
+             @foreach($comments as $comment)
+               <div class="row" style="margin-top:20px" >
+
+                   <div class="col-sm-2" >  <img src="/images/gaming.jpeg" class="img-rounded" alt="Cinque Terre" ></div>
+                     <div class="col-sm-6" >
+                       {{$comment->comment}}</div>
+                       <div class="col-sm-2" ></div>
+
+
+
+               </div>
+                     <hr>
+
+                  @endforeach
+
+
+
 
 
             </div>
