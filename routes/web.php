@@ -25,3 +25,4 @@ Route::get('/disp/{id}','DisplayController@index');
 Route::post('/disp','DisplayController@create');
 Route::get('/like/{id}','LikeController@create');
 Route::get('/delete/{id}','DisplayController@delete');
+Route::get('/dislike/{id}','LikeController@dislike');

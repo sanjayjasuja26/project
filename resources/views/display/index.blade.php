@@ -20,8 +20,10 @@
                             <span> comments</span> <span class="badge">  {{$comments->count()}}</span>
 
 
-                          <a href="/like/{{Auth::user()->id}}" > <span> likes</span> <span class="badge">  2</span></a>
-
+                     @foreach($displays as $getdisplay)
+                          <a href="/like/{{$getdisplay->id}}" > <span> like</span> <span class="badge">  2</span></a>
+                          <a href="/dislike/{{$getdisplay->id}}" > <span> dislike</span> <span class="badge">  2</span></a>
+                           @endforeach
                         </div>
                         <hr>
                             <form action="/disp" method="POST">
