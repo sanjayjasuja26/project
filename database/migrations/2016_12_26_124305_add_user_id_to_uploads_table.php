@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUploadsTable extends Migration
+class AddUserIdToUploadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateUploadsTable extends Migration
      */
     public function up()
     {
-      Schema::create('uploads',function (Blueprint $table)
-      {
-         $table->increments('id');
-          $table->string('title');
-        
-          $table->string('image');
-          $table->timestamps();
-
-      });
+        Schema::table('uploads', function (Blueprint $table) {
+            $table->integer('user_id');
+        });
     }
 
     /**
@@ -31,6 +25,8 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('uploads');
+        Schema::table('uploads', function (Blueprint $table) {
+          $table->dropColumn('user_id');
+        });
     }
 }

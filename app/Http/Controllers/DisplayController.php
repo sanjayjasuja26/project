@@ -37,4 +37,9 @@ class DisplayController extends Controller
     {
       die;
     }
+    public function delete($id)
+    {
+      comment::find($id)->delete();
+      return back();
+    }
 }

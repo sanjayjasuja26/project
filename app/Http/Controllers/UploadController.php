@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 
 use Illuminate\Http\Request;
 use App\Model\upload;
@@ -26,6 +27,7 @@ class UploadController extends Controller
 
         }
           $upload->title=$request->title;
+          $upload->user_id=Auth::user()->id;
          $upload->save();
          return redirect('/');
 

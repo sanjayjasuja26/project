@@ -23,3 +23,5 @@ Route::post('/upload','UploadController@image');
 
 Route::get('/disp/{id}','DisplayController@index');
 Route::post('/disp','DisplayController@create');
+Route::get('/like/{id}','LikeController@create');
+Route::get('/delete/{id}','DisplayController@delete');
