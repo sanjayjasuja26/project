@@ -13,11 +13,20 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User;
-        $user->name='admin';
-        $user->email='admin@gmail.com';
-        $user->password=Hash::make('123456');
-        $user->save();
+
+      $users = [
+
+        [ 'name'=>'admin','email'=>'admin@gmail.com','password'=>Hash::make('123456')],
+        [ 'name'=>'sanjay','email'=>'sanjayjasuja26@gmail.com','password'=>Hash::make('123456')],
+        ['name'=>'superadmin','email'=>'superadmin@gmail.com','password'=>Hash::make('123456')],
+
+
+    ];
+
+    DB::table('users')->delete();
+   foreach ($users as $user){
+       User::insert($user);
+   }
 
     }
 }
