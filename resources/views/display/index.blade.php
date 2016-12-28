@@ -3,7 +3,6 @@
 
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-sm-6 col-sm-offset-3" >
               @foreach($displays as $getdisplay)
                <h2>  {{$getdisplay->title}} </h2>
@@ -44,8 +43,7 @@
                               <div class="col-sm-2" >  <img src="/images/gaming.jpeg" class="img-rounded" alt="Cinque Terre" >
                              </div>
                             <div class="col-sm-8" >
-                              <strong>{{$comment->user->name}}</strong> 
-
+                              <strong>{{$comment->user->name}}</strong>
                               @if((Auth::check()) && Auth::user()->id==$comment->user_id)<span style="float:right"><a href="/delete/{{$comment->id}}">delete</a></span>@endif
                             </br>
                              {{$comment->comment}}

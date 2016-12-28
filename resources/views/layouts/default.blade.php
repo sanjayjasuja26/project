@@ -35,19 +35,24 @@
 
 
     </ul>
-    <ul >
+    <ul  style="float:right">
       @if(!Auth::check())
         <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
 
          <a href="/login">Login</a>
          </li>
-        
-    @else
 
-    <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
-         <a href="#">{{Auth::user()->name}}</a>
-     <a href="/logout">Log Out</a>
-     </li>
+    @else
+            <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
+              <a href="/logout">Log Out</a>
+           </li>
+          <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
+            <a href="#">{{Auth::user()->name}}</a>
+          </li>
+          <li class="socialdiv" style="margin-top:15px;margin-left:20px;">
+            <a href="/manage">Managepost</a>
+         </li>
+
     @endif
    </ul>
 

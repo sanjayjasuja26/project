@@ -12,3 +12,13 @@
 {
   width: 100%;
 }
+.tabledata
+{
+   word-break: break-all;
+}
+.manageimage
+{
+    max-width:100%;
+    max-height:100%;
+
+}

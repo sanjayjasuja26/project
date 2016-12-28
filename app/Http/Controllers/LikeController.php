@@ -13,7 +13,9 @@ class LikeController extends Controller
     {
     if(Auth::check()){
       $likes=upload::where('id',$id)->get();
-
+      echo "<pre>";
+      print_r($likes);
+      die;
       foreach($likes as $like)
       $likesave=new like;
       $likesave->upload_id=$like->id;
