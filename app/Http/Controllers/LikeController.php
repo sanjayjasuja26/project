@@ -20,13 +20,16 @@ class LikeController extends Controller
       $likesave->user_id=Auth::user()->id;
       $likesave->count=1;
       $likesave->save();
+
       return back();
 
 
     }
     public function dislike($id)
     {
-      die;
 
+
+      like::where('user_id',$id)->delete();;
+      return back();
     }
 }

@@ -21,8 +21,9 @@
 
 
                      @foreach($displays as $getdisplay)
-                          <a href="/like/{{$getdisplay->id}}" > <span> like</span> <span class="badge">  2</span></a>
-                          <a href="/dislike/{{$getdisplay->id}}" > <span> dislike</span> <span class="badge">  2</span></a>
+                     {{$getdisplay->like}}
+                          <a href="/like/{{$getdisplay->id}}" > <span> like</span> <span class="badge">   {{$getdisplay->like->count()}}</span></a>
+                          <a href="/dislike/{{Auth::user()->id}}" > <span> dislike</span> <span class="badge">  2</span></a>
                            @endforeach
                         </div>
                         <hr>

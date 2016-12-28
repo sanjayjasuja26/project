@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\upload;
 use App\Model\comment;
+use App\Model\like;
 use Auth;
 
 
@@ -14,6 +15,7 @@ class DisplayController extends Controller
     {
 
       $data['displays']=upload::where('id',$id)->get();
+      
       $data['comments']=comment::where('upload_id',$id)->orderBy('id', 'desc')->get();
 
 

@@ -10,6 +10,8 @@ class comment extends Model
 
     public function User()
    {
-       return $this->belongsTo('App\User');
+       return $this->belongsTo('App\User','user_id');
    }
+
+
 }
