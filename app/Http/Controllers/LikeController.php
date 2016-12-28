@@ -11,24 +11,24 @@ class LikeController extends Controller
 {
     public function create($id)
     {
-
+    if(Auth::check()){
       $likes=upload::where('id',$id)->get();
 
       foreach($likes as $like)
-         $likesave=new like;
+      $likesave=new like;
       $likesave->upload_id=$like->id;
       $likesave->user_id=Auth::user()->id;
       $likesave->count=1;
       $likesave->save();
 
       return back();
-
-
+      }
+      else {
+        return redirect('login');
+      }
     }
     public function dislike($id)
     {
-
-
       like::where('user_id',$id)->delete();;
       return back();
     }
