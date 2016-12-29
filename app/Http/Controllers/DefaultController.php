@@ -9,13 +9,6 @@ class DefaultController extends Controller
 {
     public function index()
     {
-
-
-
-      $data['images']=upload::orderBy('id', 'DESC')->get();
-      
-
-       return view('default.index',$data);
-
+        return view('default.index');
     }
 }

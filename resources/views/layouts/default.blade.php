@@ -23,41 +23,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-
-        @if(Auth::check())
-        <li><a href="/upload"> Upload</a></li>
-          @endif
-
-
-    </ul>
-    <ul  style="float:right">
-      @if(!Auth::check())
-        <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
-
-         <a href="/login">Login</a>
-         </li>
-
-    @else
-            <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
-              <a href="/logout">Log Out</a>
-           </li>
-          <li class="socialdiv" style="margin-top:15px;margin-left:5px;">
-            <a href="#">{{Auth::user()->name}}</a>
-          </li>
-          <li class="socialdiv" style="margin-top:15px;margin-left:20px;">
-            <a href="/manage">Managepost</a>
-         </li>
-
-    @endif
-   </ul>
-
-  </div>
-</nav>
+@include('includes.nav_frontend')
 
 
 @yield('content')
