@@ -24,7 +24,9 @@
   <body>
 
 
-@include('includes.nav_frontend')
+  @include('includes.admin_nav_frontend')
+  
+
 
 
 

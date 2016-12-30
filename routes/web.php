@@ -26,14 +26,16 @@ Route::post('login', 'LoginController@create');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
-  Route::get('/', 'AdminController@index');
+  Route::get('/', 'Admin\AdminController@index');
   Route::get('logout', 'LoginController@getLogout');
 
   Route::group(['prefix'=>'post'], function (){
 
-  Route::get('/', 'ManagepostController@index');
-  Route::get('create', 'PostController@index');
-  Route::post('create', 'PostController@create');
+  Route::get('/', 'Admin\ManagepostController@index');
+  Route::get('create', 'Admin\PostController@index');
+  Route::post('create', 'Admin\PostController@create');
+  Route::get('delete/{id}', 'Admin\PostController@delete');
+  Route::get('edit/{id}', 'Admin\PostController@edit');
 
   });
 

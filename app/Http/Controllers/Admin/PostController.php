@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
+
 
 use Illuminate\Http\Request;
 use App\model\Post;
@@ -33,5 +35,19 @@ class PostController extends Controller
 
 
       return redirect("/admin/post");
+    }
+    public function delete($id)
+    {
+
+      Post::find($id)->delete();
+        return back();
+    }
+    public function edit($id)
+    {
+      $data['posts']=Post::where('id',$id)->first();
+      echo "<pre>";print_r($data);die;
+
+
+      die;
     }
 }

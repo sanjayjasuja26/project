@@ -9,6 +9,6 @@ class DefaultController extends Controller
 {
     public function index()
     {
-        return view('default.index',['posts'=>Post::all()]);
+        return view('default.index',['posts'=>Post::get()]);
     }
 }
