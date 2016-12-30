@@ -13,3 +13,29 @@
 
 
 Route::get('/', 'DefaultController@index');
+Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@create');
+
+
+/*
+|--------------------------------------------------------------------------
+| admin routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+
+  Route::get('/', 'AdminController@index');
+  Route::get('logout', 'LoginController@getLogout');
+
+  Route::group(['prefix'=>'post'], function (){
+
+  Route::get('/', 'ManagepostController@index');
+  Route::get('create', 'PostController@index');
+  Route::post('create', 'PostController@create');
+
+  });
+
+
+});

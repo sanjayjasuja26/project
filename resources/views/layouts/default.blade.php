@@ -22,8 +22,13 @@
     <![endif]-->
   </head>
   <body>
+  @if(Auth::check())
+
+  @include('includes.admin_nav_frontend')
+  @else
 
 @include('includes.nav_frontend')
+@endif
 
 
 @yield('content')
