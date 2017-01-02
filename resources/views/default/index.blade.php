@@ -9,16 +9,17 @@
           <div class="row">
             <div class="col-sm-8">
               <div class="manage-title">
-            <h3>{{$post->title}}</h3>
+               <h3>{{$post->title}}</h3>
+              </div>
+             </div>
+             <div class="col-sm-8">
+               <div class="manageimage">
+                 <img src="{{$post->image}}">
+               </div>
+             </div>
           </div>
-            </div>
-            <div class="col-sm-8">
-              <div class="manageimage">
-          <img src="{{$post->image}}">
-        </div>
-            </div>
-          </div>
-    </div>
-      @endforeach
+            @endforeach
+      </div>
+   </div>
 </div>
 @endsection

@@ -9,7 +9,7 @@
                 <th>Title</th>
                 <th>Image</th>
                 <th>Action</th>
-            </tr>
+             </tr>
         </thead>
         <tbody>
           @foreach($posts as $post)
@@ -22,5 +22,5 @@
             @endforeach
         </tbody>
     </table>
-  </div>
+</div>
     @endsection

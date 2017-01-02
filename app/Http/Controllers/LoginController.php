@@ -13,20 +13,24 @@ class LoginController extends Controller
     {
       return view('login.index');
     }
+
     public function create(Request $request)
     {
         $this->validate($request, [
         'email' => 'email|required|exists:users'
-          ]);
+        ]);
        if(Auth::attempt(['email' => $request->email, 'password' =>$request->password])){
+       return redirect('/admin');
+      }
+    else
+        {
+          return redirect('login');
+        }
+    }
+
+    public function getLogout()
+     {
+       Auth::logout();
        return redirect('/');
-   }
-    else{
-      return redirect('login');
-    }
-    }
-    public function getLogout(){
-      Auth::logout();
-      return redirect('/');
-    }
+     }
 }
